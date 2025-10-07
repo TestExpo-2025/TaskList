@@ -1,0 +1,76 @@
+/* CSS Custom Properties (Variables) */
+
+:root {
+  /* Primary Colors */
+  --color-primary-blue: #0099cc;
+  --color-primary-blue-dark: #006699;
+  --color-primary-red: #e63946;
+  --color-primary-red-dark: #d62828;
+
+  /* Neutral Colors */
+  --color-white: #ffffff;
+  --color-light-gray: #f8fafc;
+  --color-medium-gray: #6b7280;
+  --color-dark-gray: #1f2937;
+  --color-border: #e5e7eb;
+  --color-border-light: #f3f4f6;
+
+  /* Background Colors */
+  --color-bg-light: #f0f8ff;
+  --color-bg-lighter: #e6f3ff;
+
+  /* Spacing */
+  --spacing-xs: 0.25rem;   /* 4px */
+  --spacing-sm: 0.5rem;    /* 8px */
+  --spacing-md: 0.75rem;   /* 12px */
+  --spacing-lg: 1rem;      /* 16px */
+  --spacing-xl: 1.5rem;    /* 24px */
+  --spacing-2xl: 2rem;     /* 32px */
+  --spacing-3xl: 3rem;     /* 48px */
+  --spacing-4xl: 4rem;     /* 64px */
+
+  /* Font Sizes */
+  --font-size-xs: 0.75rem;    /* 12px */
+  --font-size-sm: 0.875rem;   /* 14px */
+  --font-size-base: 1rem;     /* 16px */
+  --font-size-lg: 1.125rem;   /* 18px */
+  --font-size-xl: 1.25rem;    /* 20px */
+  --font-size-2xl: 1.5rem;    /* 24px */
+  --font-size-3xl: 2rem;      /* 32px */
+  --font-size-4xl: 2.5rem;    /* 40px */
+
+  /* Font Weights */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Border Radius */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+  --border-radius-xl: 20px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 25px rgba(0, 0, 0, 0.08);
+  --shadow-blue: 0 4px 12px rgba(0, 153, 204, 0.3);
+  --shadow-blue-hover: 0 6px 20px rgba(0, 153, 204, 0.4);
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+
+  /* Breakpoints */
+  --breakpoint-mobile: 768px;
+  --breakpoint-tablet: 1024px;
+  --breakpoint-desktop: 1200px;
+
+  /* Z-Index */
+  --z-index-dropdown: 10;
+  --z-index-modal: 50;
+  --z-index-header: 100;
+  --z-index-toast: 1000;
+}

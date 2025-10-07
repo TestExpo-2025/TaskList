@@ -1,0 +1,28 @@
+/* Main Styles Entry Point */
+
+/* Base Styles */
+@import './base/variables.css';
+@import './base/reset.css';
+
+/* Utility Classes */
+@import './utils/utilities.css';
+
+/* Component Styles */
+@import './components/header.css';
+@import './components/forms.css';
+@import './components/buttons.css';
+@import './components/todos.css';
+
+/* Page Styles */
+@import './pages/tasks.css';
+@import './pages/user-info.css';
+@import './pages/general-settings.css';
+@import './pages/about-us.css';
+@import './pages/not-found.css';
+
+/* App Layout */
+.app {
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, var(--color-bg-light) 0%, var(--color-bg-lighter) 100%);
+}

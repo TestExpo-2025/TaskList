@@ -1,0 +1,56 @@
+/* User Info Page Styles */
+
+.user-info-container {
+  max-width: var(--breakpoint-desktop);
+  margin: var(--spacing-2xl) auto;
+  padding: 0 var(--spacing-2xl);
+}
+
+.user-info-header {
+  text-align: center;
+  margin-bottom: var(--spacing-3xl);
+  padding-bottom: var(--spacing-xl);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.title-icon {
+  font-size: var(--font-size-2xl);
+  margin-bottom: var(--spacing-sm);
+  display: block;
+}
+
+.user-info-title {
+  color: var(--color-dark-gray);
+  font-size: var(--font-size-4xl);
+  margin-bottom: var(--spacing-md);
+  font-weight: var(--font-weight-bold);
+}
+
+.user-info-subtitle {
+  color: var(--color-medium-gray);
+  font-size: var(--font-size-lg);
+  margin: 0;
+}
+
+.user-info-form {
+  background: var(--color-white);
+  border-radius: var(--border-radius-xl);
+  padding: var(--spacing-3xl) var(--spacing-4xl);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .user-info-container {
+    padding: 0 var(--spacing-md);
+  }
+
+  .user-info-title {
+    font-size: var(--font-size-2xl);
+  }
+
+  .user-info-form {
+    padding: var(--spacing-2xl) var(--spacing-xl);
+  }
+}

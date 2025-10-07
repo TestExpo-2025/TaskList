@@ -1,0 +1,12 @@
+/* Essential Utility Classes Only */
+
+/* Commonly Used Typography */
+.text-center { text-align: center; }
+
+/* Essential Flex Utilities */
+.flex { display: flex; }
+.items-center { align-items: center; }
+.justify-center { justify-content: center; }
+
+/* Essential Transitions */
+.transition-normal { transition: all var(--transition-normal); }

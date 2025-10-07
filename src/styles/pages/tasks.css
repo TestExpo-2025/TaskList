@@ -1,0 +1,61 @@
+/* Tasks Page Styles */
+
+.tasks-page {
+  max-width: 1000px;
+  margin: var(--spacing-2xl) auto;
+  background: var(--color-white);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: var(--spacing-2xl);
+  min-height: auto;
+  border: 1px solid var(--color-border);
+}
+
+.tasks-header {
+  text-align: center;
+  margin-bottom: var(--spacing-3xl);
+  padding-bottom: var(--spacing-xl);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.tasks-title {
+  color: var(--color-dark-gray);
+  font-size: var(--font-size-4xl);
+  margin-bottom: var(--spacing-md);
+  font-weight: var(--font-weight-bold);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+}
+
+.tasks-subtitle {
+  color: var(--color-medium-gray);
+  font-size: var(--font-size-lg);
+  text-align: center;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .tasks-page {
+    max-width: 900px;
+    padding: var(--spacing-3xl);
+  }
+}
+
+@media (max-width: 640px) {
+  .tasks-page {
+    margin: var(--spacing-lg);
+    padding: var(--spacing-xl);
+  }
+
+  .tasks-title {
+    font-size: var(--font-size-3xl);
+  }
+
+  .tasks-subtitle {
+    font-size: var(--font-size-base);
+  }
+}
