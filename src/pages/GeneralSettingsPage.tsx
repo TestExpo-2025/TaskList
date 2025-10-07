@@ -14,7 +14,8 @@ const GeneralSettingsPage: React.FC = () => {
     const [isSubmitted, setIsSubmitted] = useState(false);
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-        const { name, value } = e.target;
+        const { name, type } = e.target;
+        const value = type === 'checkbox' ? (e.target as HTMLInputElement).checked : e.target.value;
         setFormData(prev => ({
             ...prev,
             [name]: value
@@ -141,11 +142,11 @@ const GeneralSettingsPage: React.FC = () => {
                         <label className="form-label">
                             <input
                                 type="checkbox"
-                                name="sessionEmails"
+                                name="session"
                                 checked={formData.session}
                                 onChange={handleInputChange}
                             />
-                            Receive Session Emails
+                            Save session
                         </label>
                     </div>
 
@@ -153,7 +154,7 @@ const GeneralSettingsPage: React.FC = () => {
                         <label className="form-label">
                             <input
                                 type="checkbox"
-                                name="marketingEmails"
+                                name="marketing"
                                 checked={formData.marketing}
                                 onChange={handleInputChange}
                             />
@@ -162,7 +163,7 @@ const GeneralSettingsPage: React.FC = () => {
                     </div>
                 </div>
 
-                <div className="form-actions">
+                <div className="form-actions" style={{"justify-content":"space-between"}}>
                     <button
                         type="button"
                         className="btn btn-secondary"
@@ -170,7 +171,7 @@ const GeneralSettingsPage: React.FC = () => {
                     >
                         Reset Form
                     </button>
-                    <button type="submit" className="btn btn-primary">
+                    <button type="submit" className="btn btn-primary" style={{"color": "#006699"}}>
                         Save Information
                     </button>
                 </div>
