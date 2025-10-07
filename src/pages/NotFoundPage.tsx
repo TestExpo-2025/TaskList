@@ -7,7 +7,7 @@ interface NotFoundPageProps {
 const NotFoundPage: React.FC<NotFoundPageProps> = ({ onNavigateHome }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
-  const [position, setPosition] = useState({ top: 3, left: 3 });
+  const [position, setPosition] = useState({ top: 100, left: 220 });
 
   const goCrazy = () => {
     if (containerRef.current && buttonRef.current) {
