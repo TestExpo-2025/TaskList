@@ -2,8 +2,10 @@ import { Header } from './components'
 import { TasksPage, AboutUsPage, UserInfoPage, NotFoundPage, GeneralSettingsPage } from './pages'
 import { useNavigation, useTodos } from './hooks'
 import { APP_CONFIG } from './constants'
+import { getLocalization } from './hooks/useLocalization'
 
 function App() {
+  getLocalization();
   const { currentPage, navigateTo, navigateToNotFound, navigateToUserInfo } = useNavigation(APP_CONFIG.defaultPage);
   const {
     todos,

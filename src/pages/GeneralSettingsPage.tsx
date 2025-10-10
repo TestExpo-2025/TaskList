@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import type { GeneralSettings } from '../types';
 import { useTranslation } from 'react-i18next';
+import { setLocalization } from '../hooks/useLocalization';
 
 const GeneralSettingsPage: React.FC = () => {
-    const {t} =useTranslation();
+    const { t } = useTranslation();
     const [formData, setFormData] = useState<GeneralSettings>({
         language: '',
         timezone: '',
@@ -23,21 +24,13 @@ const GeneralSettingsPage: React.FC = () => {
             [name]: value
         }));
     };
-
+    useEffect(() => { setLocalization(formData.language); }, [formData.language]);
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
 
         setIsSubmitted(true);
         setTimeout(() => {
             setIsSubmitted(false);
-            setFormData({
-                language: '',
-                timezone: '',
-                country: '',
-                session: false,
-                notifications: false,
-                marketing: false,
-            });
             // Clear the buggy URL when resetting
             window.history.pushState({}, '', '/general-settings');
         }, 3000);
@@ -87,10 +80,10 @@ const GeneralSettingsPage: React.FC = () => {
                             className="form-input"
                         >
                             <option value="">Select Language</option>
-                            <option value="english">English</option>
-                            <option value="norwegian">Norwegian</option>
-                            <option value="swedish">Swedish</option>
-                            <option value="danish">Danish</option>
+                            <option value="en">English</option>
+                            <option value="no">Norwegian</option>
+                            <option value="se">Swedish</option>
+                            <option value="da">Danish</option>
                         </select>
                     </div>
 
@@ -161,11 +154,11 @@ const GeneralSettingsPage: React.FC = () => {
                                 onChange={handleInputChange}
                             />
                             {t('GeneralSettingsPage.tsx_label_5')}
-                            </label>
+                        </label>
                     </div>
                 </div>
 
-                <div className="form-actions" style={{justifyContent:"space-between"}}>
+                <div className="form-actions" style={{ justifyContent: "space-between" }}>
                     <button
                         type="button"
                         className="btn btn-secondary"
@@ -173,7 +166,7 @@ const GeneralSettingsPage: React.FC = () => {
                     >
                         {t('GeneralSettingsPage.tsx_button_0')}
                     </button>
-                    <button type="submit" className="btn btn-primary" style={{"color": "#006699"}}>
+                    <button type="submit" className="btn btn-primary" style={{ "color": "#006699" }}>
                         {t('GeneralSettingsPage.tsx_button_1')}
                     </button>
                 </div>
