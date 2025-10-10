@@ -1,59 +1,58 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 interface AboutUsPageProps {
     onNavigateToNotFound?: () => void;
 }
 
 const AboutUsPage: React.FC<AboutUsPageProps> = ({ onNavigateToNotFound }) => {
+    const {t} = useTranslation();
     return (
         <div className="about-us">
             <div className="about-content">
                 <div className="about-hero">
-                    <h1 className="about-title">About Our Application</h1>
+                    <h1 className="about-title">{t('AboutUsPage.tsx_h1_0')}</h1>
                     <p className="about-subtitle">
-                        Building better digital experiences together
+                        {t('AboutUsPage.tsx_p_0')}
                     </p>
                 </div>
 
                 <div className="about-section">
-                    <h2>Our Purpose</h2>
+                    <h2>{t('AboutUsPage.tsx_h2_0')}</h2>
                     <p>
-                        We are dedicated to creating innovative digital solutions that make
-                        everyday tasks simpler and more efficient. Our focus is on delivering
-                        user-friendly applications that enhance productivity and provide
-                        exceptional user experiences.
+                        {t('AboutUsPage.tsx_p_1')}
                     </p>
                 </div>
 
                 <div className="about-features">
-                    <h2>What We Offer</h2>
+                    <h2>{t('AboutUsPage.tsx_h2_1')}</h2>
                     <div className="features-grid">
                         <div className="feature-card">
                             <div className="feature-icon">✨</div>
-                            <h3>Modern Design</h3>
-                            <p>Contemporary, user-centered interface design principles</p>
+                            <h3>{t('AboutUsPage.tsx_h3_0')}</h3>
+                            <p>{t('AboutUsPage.tsx_p_2')}</p>
                         </div>
                         <div className="feature-card">
                             <div className="feature-icon">⚡</div>
-                            <h3>High Performance</h3>
-                            <p>Optimized applications built with cutting-edge technology</p>
+                            <h3>{t('AboutUsPage.tsx_h3_1')}</h3>
+                            <p>{t('AboutUsPage.tsx_p_3')}</p>
                         </div>
                         <div className="feature-card">
                             <div className="feature-icon">📱</div>
-                            <h3>Cross-Platform</h3>
-                            <p>Seamless experience across all devices and platforms</p>
+                            <h3>{t('AboutUsPage.tsx_h3_2')}</h3>
+                            <p>{t('AboutUsPage.tsx_p_4')}</p>
                         </div>
                     </div>
                 </div>
 
                 <div className="about-cta">
-                    <h2>Interested in learning more?</h2>
-                    <p>Explore additional information about our services and solutions.</p>
+                    <h2>{t('AboutUsPage.tsx_h2_2')}</h2>
+                    <p>{t('AboutUsPage.tsx_p_5')}</p>
                     <button
                         className="btn btn-go"
                         onClick={onNavigateToNotFound}
                     >
-                        Read more
+                        {t('AboutUsPage.tsx_button_0')}
                     </button>
                 </div>
 

@@ -2,6 +2,7 @@ import React from 'react';
 import type { Todo } from '../types';
 import TodoItem from './TodoItem';
 import TodoActions from './TodoActions';
+import { useTranslation } from 'react-i18next';
 
 interface TodoListProps {
   todos: Todo[];
@@ -23,11 +24,12 @@ const TodoList: React.FC<TodoListProps> = ({
   const completedTodosCount = todos.filter(todo => todo.completed).length;
   const remainingTodosCount = todos.length - completedTodosCount;
   const hasCompletedTodos = completedTodosCount > 0;
+  const { t } = useTranslation();
 
   if (todos.length === 0) {
     return (
       <div className="empty-state">
-        <p>No todos yet. Add one above! 🚀</p>
+        <p>{t('TodoList.tsx_p_0')}</p>
       </div>
     );
   }

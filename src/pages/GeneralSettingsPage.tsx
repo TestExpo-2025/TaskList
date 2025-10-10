@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import type { GeneralSettings } from '../types';
+import { useTranslation } from 'react-i18next';
 
 const GeneralSettingsPage: React.FC = () => {
+    const {t} =useTranslation();
     const [formData, setFormData] = useState<GeneralSettings>({
         language: '',
         timezone: '',
@@ -57,7 +59,7 @@ const GeneralSettingsPage: React.FC = () => {
             <div className="general-settings-container">
                 <div className="success-message">
                     <div className="success-icon">✓</div>
-                    <h2>Settings Saved Successfully!</h2>
+                    <h2>{t('GeneralSettingsPage.tsx_h2_0')}</h2>
                     <p></p>
                 </div>
             </div>
@@ -68,15 +70,15 @@ const GeneralSettingsPage: React.FC = () => {
         <div className="general-settings-container">
             <form onSubmit={handleSubmit} className="general-settings-form">
                 <div className="general-settings-header">
-                    <h1 className="general-settings-title">📋 General Settings</h1>
+                    <h1 className="general-settings-title">{t('GeneralSettingsPage.tsx_h1_0')}</h1>
                     <p className="general-settings-subtitle">
-                        Please fill in your General Settings below
+                        {t('GeneralSettingsPage.tsx_p_1')}
                     </p>
                 </div>
 
                 <div className="form-row">
                     <div className="form-group">
-                        <label htmlFor="language" className="form-label">Language</label>
+                        <label htmlFor="language" className="form-label">{t('GeneralSettingsPage.tsx_label_0')}</label>
                         <select
                             id="language"
                             name="language"
@@ -93,7 +95,7 @@ const GeneralSettingsPage: React.FC = () => {
                     </div>
 
                     <div className="form-group">
-                        <label htmlFor="country" className="form-label">Country</label>
+                        <label htmlFor="country" className="form-label">{t('GeneralSettingsPage.tsx_label_1')}</label>
                         <select
                             id="country"
                             name="country"
@@ -109,7 +111,7 @@ const GeneralSettingsPage: React.FC = () => {
                     </div>
 
                     <div className="form-group">
-                        <label htmlFor="timezone" className="form-label">Timezone</label>
+                        <label htmlFor="timezone" className="form-label">{t('GeneralSettingsPage.tsx_label_2')}</label>
                         <select
                             id="timezone"
                             name="timezone"
@@ -134,7 +136,7 @@ const GeneralSettingsPage: React.FC = () => {
                                 checked={formData.notifications}
                                 onChange={handleInputChange}
                             />
-                            Enable Notifications
+                            {t('GeneralSettingsPage.tsx_label_3')}
                         </label>
                     </div>
 
@@ -146,7 +148,7 @@ const GeneralSettingsPage: React.FC = () => {
                                 checked={formData.session}
                                 onChange={handleInputChange}
                             />
-                            Save session
+                            {t('GeneralSettingsPage.tsx_label_4')}
                         </label>
                     </div>
 
@@ -158,8 +160,8 @@ const GeneralSettingsPage: React.FC = () => {
                                 checked={formData.marketing}
                                 onChange={handleInputChange}
                             />
-                            Receive Marketing Emails
-                        </label>
+                            {t('GeneralSettingsPage.tsx_label_5')}
+                            </label>
                     </div>
                 </div>
 
@@ -169,10 +171,10 @@ const GeneralSettingsPage: React.FC = () => {
                         className="btn btn-secondary"
                         onClick={resetForm}
                     >
-                        Reset Form
+                        {t('GeneralSettingsPage.tsx_button_0')}
                     </button>
                     <button type="submit" className="btn btn-primary" style={{"color": "#006699"}}>
-                        Save Information
+                        {t('GeneralSettingsPage.tsx_button_1')}
                     </button>
                 </div>
             </form>

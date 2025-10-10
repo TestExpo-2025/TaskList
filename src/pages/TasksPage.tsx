@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import TodoForm from '../components/TodoForm';
 import TodoList from '../components/TodoList';
 import type { Todo } from '../types';
+import { useTranslation } from 'react-i18next'
 
 interface TasksPageProps {
   todos: Todo[];
@@ -22,6 +23,7 @@ const TasksPage: React.FC<TasksPageProps> = ({
   markAllUndone,
   clearCompleted,
 }) => {
+  const { t } = useTranslation();
   const [input, setInput] = useState('');
 
   const handleAddTodo = () => {
@@ -32,8 +34,8 @@ const TasksPage: React.FC<TasksPageProps> = ({
   return (
     <div className="tasks-page">
       <div className="tasks-header">
-        <h1 className="tasks-title">✅ My Todo List</h1>
-        <p className="tasks-subtitle">Manage your tasks efficiently</p>
+        <h1 className="tasks-title">{t('TasksPage.tsx_h1_0')}</h1>
+        <p className="tasks-subtitle">{t('TasksPage.tsx_p_0')}</p>
       </div>
       <TodoForm
         input={input}

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next'
 
 interface TodoFormProps {
   input: string;
@@ -11,7 +12,7 @@ const TodoForm: React.FC<TodoFormProps> = ({ input, onInputChange, onSubmit }) =
     e.preventDefault();
     onSubmit();
   };
-
+  const { t } = useTranslation();
   return (
     <form onSubmit={handleSubmit} className="input-section">
       <input
@@ -23,7 +24,7 @@ const TodoForm: React.FC<TodoFormProps> = ({ input, onInputChange, onSubmit }) =
         onKeyDown={e => e.key === 'Enter' && onSubmit()}
       />
       <button type="submit" className="btn btn-primary">
-        Add Todo
+        {t('TodoForm.tsx_button_0')}
       </button>
     </form>
   );

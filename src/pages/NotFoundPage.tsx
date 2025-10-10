@@ -1,10 +1,12 @@
 import React, { useRef, useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 interface NotFoundPageProps {
   onNavigateHome?: () => void;
 }
 
 const NotFoundPage: React.FC<NotFoundPageProps> = ({ onNavigateHome }) => {
+  const {t} = useTranslation();
   const containerRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const [position, setPosition] = useState({ top: 100, left: 220 });
@@ -42,10 +44,10 @@ const NotFoundPage: React.FC<NotFoundPageProps> = ({ onNavigateHome }) => {
         <div className="not-found-content">
           <div className="not-found-icon">🐛</div>
           <h1 className="not-found-title">404</h1>
-          <h2 className="not-found-subtitle">Oops! This page seems to be broken...</h2>
+          <h2 className="not-found-subtitle">{t('NotFoundPage.tsx_h2_0')}</h2>
 
           <div className="not-found-message">
-            <p>Congratulations! You've discovered our hidden 404 page! 🎉</p>
+            <p>{t('NotFoundPage.tsx_p_0')}</p>
           </div>
 
           <div
@@ -70,7 +72,7 @@ const NotFoundPage: React.FC<NotFoundPageProps> = ({ onNavigateHome }) => {
                 transition: 'top 0.3s, left 0.3s',
               }}
             >
-              🏠 Take Me Home
+              {t('NotFoundPage.tsx_button_0')}
             </button>
           </div>
         </div>

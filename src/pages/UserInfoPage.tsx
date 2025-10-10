@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import type { UserInfo } from '../types';
+import { useTranslation } from 'react-i18next';
 
 const UserInfoPage: React.FC = () => {
+    const {t} = useTranslation();
     const [formData, setFormData] = useState<UserInfo>({
         firstName: '',
         lastName: '',
@@ -48,7 +50,7 @@ const UserInfoPage: React.FC = () => {
             });
             // Clear the buggy URL when resetting
             window.history.pushState({}, '', '/user-info');
-        }, 3000);
+        }, 10000);
     };
 
     const resetForm = () => {
@@ -70,8 +72,8 @@ const UserInfoPage: React.FC = () => {
             <div className="user-info-container">
                 <div className="success-message">
                     <div className="success-icon">✓</div>
-                    <h2>Information Saved Successfully!</h2>
-                    <p>Thank you for providing your information.</p>
+                    <h2>{t('UserInfoPage.tsx_h2_0')}</h2>
+                    <p>{t('UserInfoPage.tsx_p_0')}</p>
                 </div>
             </div>
         );
@@ -81,16 +83,16 @@ const UserInfoPage: React.FC = () => {
         <div className="user-info-container">
             <form onSubmit={handleSubmit} className="user-info-form">
                 <div className="user-info-header">
-                    <h1 className="user-info-title">📋User Information </h1>
+                    <h1 className="user-info-title">{t('UserInfoPage.tsx_h1_0')}</h1>
                     <p className="user-info-subtitle">
-                        Please fill in your personal information below
+                        {t('UserInfoPage.tsx_p_1')}
                     </p>
                 </div>
 
                 <div className="form-row">
                     <div className="form-group">
                         <label htmlFor="firstName" className="form-label">
-                            First Name <span className="required-asterisk">*</span>
+                            {t('UserInfoPage.tsx_label_0')}<span className="required-asterisk">*</span>
                         </label>
                         <input
                             type="text"
@@ -105,7 +107,7 @@ const UserInfoPage: React.FC = () => {
                     </div>
                     <div className="form-group">
                         <label htmlFor="lastName" className="form-label">
-                            Last Name <span className="required-asterisk">*</span>
+                            {t('UserInfoPage.tsx_label_1')}<span className="required-asterisk">*</span>
                         </label>
                         <input
                             type="text"
@@ -123,7 +125,7 @@ const UserInfoPage: React.FC = () => {
                 <div className="form-row">
                     <div className="form-group">
                         <label htmlFor="email" className="form-label">
-                            Email Address <span className="required-asterisk">*</span>
+                            {t('UserInfoPage.tsx_label_2')}<span className="required-asterisk">*</span>
                         </label>
                         <input
                             type="email"
@@ -137,7 +139,7 @@ const UserInfoPage: React.FC = () => {
                     </div>
                     <div className="form-group">
                         <label htmlFor="password" className="form-label">
-                            Password <span className="required-asterisk">*</span>
+                            {t('UserInfoPage.tsx_label_3')}<span className="required-asterisk">*</span>
                         </label>
                         <input
                             type="password"
@@ -154,7 +156,7 @@ const UserInfoPage: React.FC = () => {
 
                 <div className="form-row">
                     <div className="form-group">
-                        <label htmlFor="phone" className="form-label">Phone Number</label>
+                        <label htmlFor="phone" className="form-label">{t('UserInfoPage.tsx_label_4')}</label>
                         <input
                             type="tel"
                             id="phone"
@@ -166,7 +168,7 @@ const UserInfoPage: React.FC = () => {
                         />
                     </div>
                     <div className="form-group">
-                        <label htmlFor="address" className="form-label">Address</label>
+                        <label htmlFor="address" className="form-label">{t('UserInfoPage.tsx_label_5')}</label>
                         <input
                             type="text"
                             id="address"
@@ -181,7 +183,7 @@ const UserInfoPage: React.FC = () => {
 
                 <div className="form-row">
                     <div className="form-group">
-                        <label htmlFor="city" className="form-label">City</label>
+                        <label htmlFor="city" className="form-label">{t('UserInfoPage.tsx_label_6')}</label>
                         <input
                             type="text"
                             id="city"
@@ -193,7 +195,7 @@ const UserInfoPage: React.FC = () => {
                         />
                     </div>
                     <div className="form-group">
-                        <label htmlFor="zipCode" className="form-label">Zip Code</label>
+                        <label htmlFor="zipCode" className="form-label">{t('UserInfoPage.tsx_label_7')}</label>
                         <input
                             type="text"
                             id="zipCode"
@@ -205,7 +207,7 @@ const UserInfoPage: React.FC = () => {
                         />
                     </div>
                     <div className="form-group">
-                        <label htmlFor="country" className="form-label">Country</label>
+                        <label htmlFor="country" className="form-label">{t('UserInfoPage.tsx_label_8')}</label>
                         <input
                             type="text"
                             id="country"
@@ -221,14 +223,14 @@ const UserInfoPage: React.FC = () => {
                 <div className="form-actions">
 
                     <button type="submit" className="btn btn-secondary">
-                        Save Information
+                        {t('UserInfoPage.tsx_button_0')}
                     </button>
                     <button
                         type="button"
                         className="btn btn-primary"
                         onClick={resetForm}
                     >
-                        Reset Form
+                        {t('UserInfoPage.tsx_button_1')}
                     </button>
                 </div>
             </form>
